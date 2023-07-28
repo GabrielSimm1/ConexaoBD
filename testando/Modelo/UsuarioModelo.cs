@@ -9,7 +9,7 @@ namespace Modelo
         //obejto usuario
     public class UsuarioModelo
     {
-         int idUsuario;
+         public int id;
          public string nome;
          public string senha;
         //constructor da classe modelo

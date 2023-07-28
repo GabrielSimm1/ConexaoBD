@@ -79,3 +79,4 @@ C:\Users\aluno\Source\Repos\ConexaoBD\testando\testando\obj\Debug\net6.0-windows
 C:\Users\aluno\Source\Repos\ConexaoBD\testando\testando\obj\Debug\net6.0-windows\testando.pdb
 C:\Users\aluno\Source\Repos\ConexaoBD\testando\testando\obj\Debug\net6.0-windows\testando.genruntimeconfig.cache
 C:\Users\aluno\Source\Repos\ConexaoBD\testando\testando\obj\Debug\net6.0-windows\ref\testando.dll
+C:\Users\aluno\source\repos\ConexaoBD\testando\testando\obj\Debug\net6.0-windows\testando.FormularioPrincipal.resources

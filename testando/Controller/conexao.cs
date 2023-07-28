@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace Controller
 {
-    public class conexao
+    public class Conexao
     {
         //atributos de conexão
         static private string servidor = "localhost";
@@ -18,7 +18,7 @@ namespace Controller
         //StrCon caminho de conexão
         static private string StrCon = "server=" + servidor + ";database=" + db + ";user id=" + usuario + ";pasword=" + senha;
         //metodo de obter a conexão com o MySql
-        public MySqlConnection getConexão()
+        public MySqlConnection getConexao()
         {
             MySqlConnection conexao = new MySqlConnection(StrCon);
             return conexao;

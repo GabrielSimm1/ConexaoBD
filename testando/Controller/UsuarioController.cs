@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Modelo;
 using System.Data;
+using System.Runtime.InteropServices;
 
 namespace Controller
 {
     public class UsuarioController
     {// instanciei o objeto conexao
-        conexao con = new conexao();
+        Conexao con = new Conexao();
 
         //criando o metodo de cadastrar usuario
         public bool cadastrar(UsuarioModelo usuario)
@@ -21,10 +22,10 @@ namespace Controller
             string sql = "insert into usuario(nome, senha) values('" + usuario.nome + "','" + usuario.senha + "')";
 
             //chamando minha conexão
-            MySqlConnection sqlCon = con.getConexão();
+            MySqlConnection sqlCon = con.getConexao();
             sqlCon.Open();//abrindo o banco
             MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
-            if (cmd.ExecuteNonQuery() >= 1) ;//executar o seu sql
+            if (cmd.ExecuteNonQuery() >= 1)//executar o seu sql
             resultado = true;
             sqlCon.Close();//fecho a conexao
 
@@ -34,7 +35,7 @@ namespace Controller
         {
             //crio uma tabela de dados
             DataTable dt = new DataTable();
-            MySqlConnection conn = con.getConexão();
+            MySqlConnection conn = con.getConexao();
             conn.Open();//abre o banco de dados
             MySqlCommand sqlCon = new MySqlCommand(sql, conn);
             sqlCon.CommandType = System.Data.CommandType.Text;
@@ -47,7 +48,7 @@ namespace Controller
         public bool Excluir(int codigo)
         {
             bool resultado = false;
-            MySqlConnection sqlcon = con.getConexão();
+            MySqlConnection sqlcon = con.getConexao();
             string sql = "delete from usuario where id = " + codigo;
             sqlcon.Open();
             MySqlCommand mySqlCommand = new MySqlCommand(sql, sqlcon);
@@ -57,6 +58,23 @@ namespace Controller
             {
                 resultado = true;
             }
+            return resultado;
+        }
+        public bool Editar(UsuarioModelo us)
+        {
+            bool resultado = false;
+            string sql = "update usuario set nome=@nome, senha=@senha where id=@id";
+            MySqlConnection sqlcon = con.getConexao();
+            sqlcon.Open();
+            MySqlCommand command = new MySqlCommand(sql, sqlcon);
+            command.CommandType = System.Data.CommandType.Text;
+            command.CommandText = sql;
+            command.Parameters.AddWithValue("@nome", us.nome);
+            command.Parameters.AddWithValue("@senha", us.senha);
+            command.Parameters.AddWithValue("@id", us.id);
+            if (command.ExecuteNonQuery() >= 1)
+                resultado = true;
+            sqlcon.Close();
             return resultado;
         }
     }

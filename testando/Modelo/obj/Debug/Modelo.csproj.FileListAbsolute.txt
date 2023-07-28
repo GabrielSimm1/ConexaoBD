@@ -4,3 +4,9 @@ C:\Users\aluno\source\repos\testando\Modelo\obj\Debug\Modelo.csproj.AssemblyRefe
 C:\Users\aluno\source\repos\testando\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
 C:\Users\aluno\source\repos\testando\Modelo\obj\Debug\Modelo.dll
 C:\Users\aluno\source\repos\testando\Modelo\obj\Debug\Modelo.pdb
+C:\Users\aluno\Source\Repos\ConexaoBD\testando\Modelo\bin\Debug\Modelo.dll
+C:\Users\aluno\Source\Repos\ConexaoBD\testando\Modelo\bin\Debug\Modelo.pdb
+C:\Users\aluno\Source\Repos\ConexaoBD\testando\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.cache
+C:\Users\aluno\Source\Repos\ConexaoBD\testando\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\aluno\Source\Repos\ConexaoBD\testando\Modelo\obj\Debug\Modelo.dll
+C:\Users\aluno\Source\Repos\ConexaoBD\testando\Modelo\obj\Debug\Modelo.pdb
