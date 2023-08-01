@@ -4,6 +4,7 @@ using Modelo;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design.Serialization;
+using System.Data;
 
 namespace testando
 
@@ -11,6 +12,7 @@ namespace testando
     public partial class Form1 : Form
     {
         int codigo;
+        int id_perfil;
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +27,10 @@ namespace testando
         {
             //instanciar o meu controleusuario
             UsuarioController usControle = new UsuarioController();
-            dtUsuario.DataSource = usControle.obterDados("select *from usuario");
+            dtUsuario.DataSource = usControle.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
+            cboPerfil.DataSource = usControle.obterDados("select *from perfil");
+            cboPerfil.DisplayMember = "perfil";
+            cboPerfil.ValueMember = "id_perfil";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,6 +38,7 @@ namespace testando
             UsuarioModelo usModelo = new UsuarioModelo();
             usModelo.nome= textBoxNome.Text;
             usModelo.senha= textBoxSenha.Text;
+            usModelo.id_perfil = id_perfil;
             UsuarioController usControle = new UsuarioController();
             if (usModelo.nome != "" && usModelo.senha != "")
             {
@@ -114,6 +120,12 @@ namespace testando
         {
             FrmListarUsuario frmListar = new FrmListarUsuario();
             frmListar.ShowDialog();
+        }
+
+        private void cboPerfil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //variavel perfil convert para inteiro
+            id_perfil = Convert.ToInt32(((DataRowView)cboPerfil.SelectedItem)["id_perfil"]);
         }
     }
 }

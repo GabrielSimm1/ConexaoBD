@@ -40,13 +40,15 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
+            this.cboPerfil = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(235, 24);
+            this.label1.Location = new System.Drawing.Point(67, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 15);
             this.label1.TabIndex = 0;
@@ -55,7 +57,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(580, 19);
+            this.button1.Location = new System.Drawing.Point(23, 148);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 1;
@@ -65,23 +67,23 @@
             // 
             // textBoxNome
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(297, 20);
+            this.textBoxNome.Location = new System.Drawing.Point(115, 50);
             this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(100, 23);
+            this.textBoxNome.Size = new System.Drawing.Size(121, 23);
             this.textBoxNome.TabIndex = 2;
             // 
             // textBoxSenha
             // 
-            this.textBoxSenha.Location = new System.Drawing.Point(462, 20);
+            this.textBoxSenha.Location = new System.Drawing.Point(115, 79);
             this.textBoxSenha.Name = "textBoxSenha";
-            this.textBoxSenha.Size = new System.Drawing.Size(100, 23);
+            this.textBoxSenha.Size = new System.Drawing.Size(121, 23);
             this.textBoxSenha.TabIndex = 3;
             this.textBoxSenha.TextChanged += new System.EventHandler(this.textBoxSenha_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(414, 24);
+            this.label3.Location = new System.Drawing.Point(67, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 4;
@@ -89,15 +91,15 @@
             // 
             // textBoxID
             // 
-            this.textBoxID.Location = new System.Drawing.Point(116, 21);
+            this.textBoxID.Location = new System.Drawing.Point(115, 21);
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(100, 23);
+            this.textBoxID.Size = new System.Drawing.Size(121, 23);
             this.textBoxID.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 24);
+            this.label2.Location = new System.Drawing.Point(78, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(21, 15);
             this.label2.TabIndex = 6;
@@ -105,7 +107,7 @@
             // 
             // btnConexao
             // 
-            this.btnConexao.Location = new System.Drawing.Point(339, 318);
+            this.btnConexao.Location = new System.Drawing.Point(629, 318);
             this.btnConexao.Name = "btnConexao";
             this.btnConexao.Size = new System.Drawing.Size(89, 23);
             this.btnConexao.TabIndex = 7;
@@ -116,7 +118,7 @@
             // dtUsuario
             // 
             this.dtUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtUsuario.Location = new System.Drawing.Point(133, 64);
+            this.dtUsuario.Location = new System.Drawing.Point(396, 67);
             this.dtUsuario.Name = "dtUsuario";
             this.dtUsuario.RowTemplate.Height = 25;
             this.dtUsuario.Size = new System.Drawing.Size(547, 231);
@@ -125,7 +127,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(133, 318);
+            this.btnExcluir.Location = new System.Drawing.Point(436, 318);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(85, 23);
             this.btnExcluir.TabIndex = 9;
@@ -135,7 +137,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(546, 318);
+            this.btnEditar.Location = new System.Drawing.Point(810, 318);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(89, 23);
             this.btnEditar.TabIndex = 10;
@@ -145,7 +147,7 @@
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(706, 16);
+            this.btnListar.Location = new System.Drawing.Point(211, 148);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(100, 23);
             this.btnListar.TabIndex = 11;
@@ -153,12 +155,32 @@
             this.btnListar.UseVisualStyleBackColor = true;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
+            // cboPerfil
+            // 
+            this.cboPerfil.FormattingEnabled = true;
+            this.cboPerfil.Location = new System.Drawing.Point(115, 108);
+            this.cboPerfil.Name = "cboPerfil";
+            this.cboPerfil.Size = new System.Drawing.Size(121, 23);
+            this.cboPerfil.TabIndex = 12;
+            this.cboPerfil.SelectedIndexChanged += new System.EventHandler(this.cboPerfil_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(66, 113);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 15);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Perfil";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(966, 484);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cboPerfil);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnExcluir);
@@ -194,5 +216,7 @@
         private Button btnExcluir;
         private Button btnEditar;
         private Button btnListar;
+        private ComboBox cboPerfil;
+        private Label label4;
     }
 }

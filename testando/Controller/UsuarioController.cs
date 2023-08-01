@@ -19,7 +19,7 @@ namespace Controller
         {
             //declaro a variavel da resposta da minha query
             bool resultado = false;
-            string sql = "insert into usuario(nome, senha) values('" + usuario.nome + "','" + usuario.senha + "')";
+            string sql = "insert into usuario(nome, senha, id_perfil) values('" + usuario.nome + "','" + usuario.senha + "', "+usuario.id_perfil+")";
 
             //chamando minha conexão
             MySqlConnection sqlCon = con.getConexao();
