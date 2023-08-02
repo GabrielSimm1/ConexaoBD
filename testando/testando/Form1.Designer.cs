@@ -48,7 +48,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 53);
+            this.label1.Location = new System.Drawing.Point(66, 165);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 15);
             this.label1.TabIndex = 0;
@@ -57,7 +57,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(23, 148);
+            this.button1.Location = new System.Drawing.Point(66, 262);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 1;
@@ -67,14 +67,14 @@
             // 
             // textBoxNome
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(115, 50);
+            this.textBoxNome.Location = new System.Drawing.Point(115, 162);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(121, 23);
             this.textBoxNome.TabIndex = 2;
             // 
             // textBoxSenha
             // 
-            this.textBoxSenha.Location = new System.Drawing.Point(115, 79);
+            this.textBoxSenha.Location = new System.Drawing.Point(115, 191);
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(121, 23);
             this.textBoxSenha.TabIndex = 3;
@@ -83,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 82);
+            this.label3.Location = new System.Drawing.Point(67, 194);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 4;
@@ -91,7 +91,7 @@
             // 
             // textBoxID
             // 
-            this.textBoxID.Location = new System.Drawing.Point(115, 21);
+            this.textBoxID.Location = new System.Drawing.Point(115, 133);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(121, 23);
             this.textBoxID.TabIndex = 5;
@@ -99,7 +99,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 24);
+            this.label2.Location = new System.Drawing.Point(88, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(21, 15);
             this.label2.TabIndex = 6;
@@ -141,13 +141,13 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(89, 23);
             this.btnEditar.TabIndex = 10;
-            this.btnEditar.Text = "Editar";
+            this.btnEditar.Text = "Atualizar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(211, 148);
+            this.btnListar.Location = new System.Drawing.Point(192, 262);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(100, 23);
             this.btnListar.TabIndex = 11;
@@ -158,7 +158,7 @@
             // cboPerfil
             // 
             this.cboPerfil.FormattingEnabled = true;
-            this.cboPerfil.Location = new System.Drawing.Point(115, 108);
+            this.cboPerfil.Location = new System.Drawing.Point(115, 220);
             this.cboPerfil.Name = "cboPerfil";
             this.cboPerfil.Size = new System.Drawing.Size(121, 23);
             this.cboPerfil.TabIndex = 12;
@@ -167,11 +167,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(66, 113);
+            this.label4.Location = new System.Drawing.Point(72, 223);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 15);
+            this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 13;
-            this.label4.Text = "Perfil";
+            this.label4.Text = "Perfil:";
             // 
             // Form1
             // 

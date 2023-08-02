@@ -13,6 +13,7 @@ namespace testando
     {
         int codigo;
         int id_perfil;
+        
         public Form1()
         {
             InitializeComponent();
@@ -45,6 +46,7 @@ namespace testando
                 if (usControle.cadastrar(usModelo) == true)
                 {
                     MessageBox.Show("Usuário cadastrado com sucesso!");
+                    dtUsuario.DataSource = usControle.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
                 }
                 else
                 {
@@ -84,6 +86,7 @@ namespace testando
             MessageBox.Show("Usuario selecionado: " + codigo.ToString());
             textBoxNome.Text = dtUsuario.Rows[e.RowIndex].Cells["nome"].Value.ToString();
             textBoxSenha.Text = dtUsuario.Rows[e.RowIndex].Cells["senha"].Value.ToString();
+            cboPerfil.Text = dtUsuario.Rows[e.RowIndex].Cells["perfil"].Value.ToString();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -92,6 +95,7 @@ namespace testando
             if(usController.Excluir(codigo) == true)
             {
                 MessageBox.Show("Usuário " + codigo + " excluido com sucesso!");
+                dtUsuario.DataSource = usController.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
             }
             else
             {
@@ -106,9 +110,11 @@ namespace testando
             usModelo.nome = textBoxNome.Text;
             usModelo.senha = textBoxSenha.Text;
             usModelo.id = codigo;
+            usModelo.id_perfil = id_perfil;
             if(usController.Editar(usModelo) == true)
             {
                 MessageBox.Show("Usuário atualizado com sucesso!!");
+                dtUsuario.DataSource = usController.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
             }
             else
             {

@@ -63,7 +63,7 @@ namespace Controller
         public bool Editar(UsuarioModelo us)
         {
             bool resultado = false;
-            string sql = "update usuario set nome=@nome, senha=@senha where id=@id";
+            string sql = "update usuario set nome=@nome, senha=@senha, id_perfil=@perfil where id=@id";
             MySqlConnection sqlcon = con.getConexao();
             sqlcon.Open();
             MySqlCommand command = new MySqlCommand(sql, sqlcon);
@@ -72,9 +72,27 @@ namespace Controller
             command.Parameters.AddWithValue("@nome", us.nome);
             command.Parameters.AddWithValue("@senha", us.senha);
             command.Parameters.AddWithValue("@id", us.id);
+            command.Parameters.AddWithValue("@perfil", us.id_perfil);
             if (command.ExecuteNonQuery() >= 1)
                 resultado = true;
             sqlcon.Close();
+            return resultado;
+        }
+        public bool Login(UsuarioModelo us)
+        {
+            bool resultado = false;
+            int registro;
+            string sql = "SELECT count(id) from usuario where nome=@usuario and senha=@senha";
+            MySqlConnection sqlcon = con.getConexao();
+            sqlcon.Open();
+            MySqlCommand command = new MySqlCommand(sql, sqlcon);
+            command.CommandType = CommandType.Text;
+            command.CommandText = sql;
+            command.Parameters.AddWithValue("@usuario", us.nome);
+            command.Parameters.AddWithValue("@senha", us.senha);
+            registro = Convert.ToInt32(command.ExecuteScalar());
+            if (registro ==1)
+                resultado = true;
             return resultado;
         }
     }
