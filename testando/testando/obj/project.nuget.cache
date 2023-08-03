@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Lv3v/q9HisFVUfD5M7IYfIt6AbyixqmZUISpcjaJCjELczIKjC/X0BjjU207+DKRWXcV+GnI3ZBSTf7XdCDd7g==",
+  "dgSpecHash": "JxI44D/nyYIEL8BbdkGApXJkGnza82MIMsRii3ZK52LdfgrPD9UH6D6l1LLjlD9CfOcW2c2otJ9Czy+Xo9xO4Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\testando\\testando.csproj",
+  "projectFilePath": "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\testando\\testando.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aluno\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\aluno\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",

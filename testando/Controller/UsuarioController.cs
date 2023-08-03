@@ -7,6 +7,7 @@ using MySql.Data.MySqlClient;
 using Modelo;
 using System.Data;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 
 namespace Controller
 {
@@ -78,11 +79,33 @@ namespace Controller
             sqlcon.Close();
             return resultado;
         }
-        public bool Login(UsuarioModelo us)
+        public UsuarioModelo carregaDados(int codigo)
         {
-            bool resultado = false;
+            UsuarioModelo us = new UsuarioModelo();
+            MySqlConnection sqlcon = con.getConexao();
+            sqlcon.Open();
+            string sql = "SELECT * from usuario where id=@id";
+            MySqlCommand command = new MySqlCommand(sql, sqlcon);
+            command.Parameters.AddWithValue("@id", codigo);//substitua o valor do codigo
+            MySqlDataReader registro = command.ExecuteReader();//leia os dados da consulta
+            if (registro.HasRows)//existe linha de registro
+            {
+                registro.Read();//leia o registro
+                //gravando as informaçoes no modelo usuario
+                us.nome = registro["nome"].ToString();
+                us.senha = registro["senha"].ToString();
+                us.id = Convert.ToInt32(registro["id"]);
+                us.id_perfil = Convert.ToInt32(registro["id_perfil"]);
+            }
+            sqlcon.Close();
+            return us;
+
+        }
+        public int Login(UsuarioModelo us)
+        {
+           
             int registro;
-            string sql = "SELECT count(id) from usuario where nome=@usuario and senha=@senha";
+            string sql = "SELECT id from usuario where nome=@usuario and senha=@senha";
             MySqlConnection sqlcon = con.getConexao();
             sqlcon.Open();
             MySqlCommand command = new MySqlCommand(sql, sqlcon);
@@ -91,9 +114,8 @@ namespace Controller
             command.Parameters.AddWithValue("@usuario", us.nome);
             command.Parameters.AddWithValue("@senha", us.senha);
             registro = Convert.ToInt32(command.ExecuteScalar());
-            if (registro ==1)
-                resultado = true;
-            return resultado;
+
+            return registro;
         }
     }
 }

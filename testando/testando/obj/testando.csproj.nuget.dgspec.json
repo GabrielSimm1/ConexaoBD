@@ -1,19 +1,19 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\testando\\testando.csproj": {}
+    "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\testando\\testando.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\Controller\\Controller.csproj": {
+    "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\Controller\\Controller.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\Controller\\Controller.csproj",
+        "projectUniqueName": "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\Controller\\Controller.csproj",
         "projectName": "Controller",
-        "projectPath": "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\Controller\\Controller.csproj",
+        "projectPath": "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\Controller\\Controller.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\Modelo\\Modelo.csproj": {
-                "projectPath": "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\Modelo\\Modelo.csproj"
+              "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\Modelo\\Modelo.csproj": {
+                "projectPath": "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\Modelo\\Modelo.csproj"
               }
             }
           }
@@ -23,11 +23,11 @@
         "net472": {}
       }
     },
-    "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\Modelo\\Modelo.csproj": {
+    "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\Modelo\\Modelo.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\Modelo\\Modelo.csproj",
+        "projectUniqueName": "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\Modelo\\Modelo.csproj",
         "projectName": "Modelo",
-        "projectPath": "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\Modelo\\Modelo.csproj",
+        "projectPath": "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\Modelo\\Modelo.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {}
@@ -38,14 +38,14 @@
         "net472": {}
       }
     },
-    "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\testando\\testando.csproj": {
+    "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\testando\\testando.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\testando\\testando.csproj",
+        "projectUniqueName": "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\testando\\testando.csproj",
         "projectName": "testando",
-        "projectPath": "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\testando\\testando.csproj",
+        "projectPath": "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\testando\\testando.csproj",
         "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aluno\\Source\\Repos\\ConexaoBD\\testando\\testando\\obj\\",
+        "outputPath": "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\testando\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -66,11 +66,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\Controller\\Controller.csproj": {
-                "projectPath": "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\Controller\\Controller.csproj"
+              "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\Controller\\Controller.csproj": {
+                "projectPath": "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\Controller\\Controller.csproj"
               },
-              "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\Modelo\\Modelo.csproj": {
-                "projectPath": "C:\\Users\\aluno\\source\\repos\\ConexaoBD\\testando\\Modelo\\Modelo.csproj"
+              "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\Modelo\\Modelo.csproj": {
+                "projectPath": "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\Modelo\\Modelo.csproj"
               }
             }
           }

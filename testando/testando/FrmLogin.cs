@@ -21,6 +21,7 @@ namespace testando
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            int codigoUsuario;
             UsuarioModelo us = new UsuarioModelo();
             UsuarioController usControle = new UsuarioController();
             us.nome = textBoxLogin.Text;
@@ -35,15 +36,23 @@ namespace testando
                 MessageBox.Show("Preencha os campos");
                 textBoxSenha.Focus();
             }
-            if(usControle.Login(us) == true)
+            codigoUsuario = usControle.Login(us);
+            if(usControle.Login(us)>=1)
             {
-                FormularioPrincipal principal = new FormularioPrincipal();
+                this.Hide();
+                FormularioPrincipal principal = new FormularioPrincipal(codigoUsuario);
                 principal.ShowDialog();
+                
             }
             else
             {
                 MessageBox.Show("Usuario ou senha inválidos");
             }
+
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
 
         }
     }
