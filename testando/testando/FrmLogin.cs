@@ -55,5 +55,22 @@ namespace testando
         {
 
         }
+
+        private void textBoxSenha_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        
+
+        private void textBoxSenha_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

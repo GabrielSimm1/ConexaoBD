@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BtnLogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.textBoxSenha = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // BtnLogin
@@ -75,8 +77,11 @@
             // 
             this.textBoxSenha.Location = new System.Drawing.Point(83, 67);
             this.textBoxSenha.Name = "textBoxSenha";
+            this.textBoxSenha.PasswordChar = '*';
             this.textBoxSenha.Size = new System.Drawing.Size(100, 23);
             this.textBoxSenha.TabIndex = 4;
+            this.textBoxSenha.TextChanged += new System.EventHandler(this.textBoxSenha_TextChanged);
+            this.textBoxSenha.MouseHover += new System.EventHandler(this.textBoxSenha_MouseHover);
             // 
             // btnCancelar
             // 
@@ -100,6 +105,7 @@
             this.Controls.Add(this.BtnLogin);
             this.Name = "FrmLogin";
             this.Text = "FrmLogin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmLogin_FormClosed);
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -114,5 +120,6 @@
         private TextBox textBoxLogin;
         private TextBox textBoxSenha;
         private Button btnCancelar;
+        private ToolTip toolTip1;
     }
 }

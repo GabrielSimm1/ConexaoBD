@@ -28,48 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.dtUsuario = new System.Windows.Forms.DataGridView();
+            this.textBoxPesquisa = new System.Windows.Forms.TextBox();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dtUsuario)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnPesquisar
             // 
-            this.button1.Location = new System.Drawing.Point(312, 323);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Location = new System.Drawing.Point(257, 307);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(100, 23);
+            this.btnPesquisar.TabIndex = 0;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // dataGridView1
+            // dtUsuario
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(244, 103);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 1;
+            this.dtUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtUsuario.Location = new System.Drawing.Point(191, 123);
+            this.dtUsuario.Name = "dtUsuario";
+            this.dtUsuario.RowTemplate.Height = 25;
+            this.dtUsuario.Size = new System.Drawing.Size(432, 165);
+            this.dtUsuario.TabIndex = 1;
             // 
-            // textBox1
+            // textBoxPesquisa
             // 
-            this.textBox1.Location = new System.Drawing.Point(312, 272);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 2;
+            this.textBoxPesquisa.Location = new System.Drawing.Point(308, 71);
+            this.textBoxPesquisa.Name = "textBoxPesquisa";
+            this.textBoxPesquisa.Size = new System.Drawing.Size(179, 23);
+            this.textBoxPesquisa.TabIndex = 2;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Location = new System.Drawing.Point(470, 307);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(94, 23);
+            this.btnImprimir.TabIndex = 3;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(245, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 15);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Pesquisar:";
             // 
             // FrmListarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnImprimir);
+            this.Controls.Add(this.textBoxPesquisa);
+            this.Controls.Add(this.dtUsuario);
+            this.Controls.Add(this.btnPesquisar);
             this.Name = "FrmListarUsuario";
             this.Text = "FrmListarUsuario";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmListarUsuario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -77,8 +101,10 @@
 
         #endregion
 
-        private Button button1;
-        private DataGridView dataGridView1;
-        private TextBox textBox1;
+        private Button btnPesquisar;
+        private DataGridView dtUsuario;
+        private TextBox textBoxPesquisa;
+        private Button btnImprimir;
+        private Label label1;
     }
 }

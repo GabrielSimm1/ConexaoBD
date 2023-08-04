@@ -34,10 +34,10 @@ namespace testando
             if(usModelo.id_perfil == 1)
             {
                 //deixar o menu invisivel
-                usuarioToolStripMenuItem.Visible = false;
+                usuarioToolStripMenuItem.Visible = true;
             }else if (usModelo.id_perfil == 2)
             {
-                usuarioToolStripMenuItem.Visible = true;
+                usuarioToolStripMenuItem.Visible = false;
             }
         }
 
@@ -46,6 +46,30 @@ namespace testando
             Form1 usuario = new Form1();
             usuario.MdiParent = this;
             usuario.Show();
+        }
+
+        private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmListarUsuario frmListar = new FrmListarUsuario();
+            frmListar.MdiParent = this;
+            frmListar.Show();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+            FrmLogin login = new FrmLogin();
+            var result = MessageBox.Show("Deseja sair do sistema?", "Sair do sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                
+                login.ShowDialog();
+            }
         }
     }
 }
