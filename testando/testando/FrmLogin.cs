@@ -70,7 +70,8 @@ namespace testando
 
         private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Close();
+            this.Visible = true;
+            this.Dispose();
         }
     }
 }

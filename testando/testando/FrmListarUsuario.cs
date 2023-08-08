@@ -10,11 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace testando
 {
     public partial class FrmListarUsuario : Form
     {
-        string sql;
+        string sql=" ";
         int valor;
         UsuarioController usController = new UsuarioController();
         public FrmListarUsuario()
@@ -24,7 +25,7 @@ namespace testando
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            
+
             if (string.IsNullOrEmpty(textBoxPesquisa.Text))
             {
                 sql = "SELECT * from usuario";
@@ -40,7 +41,7 @@ namespace testando
                 {
                     sql = "SELECT * from usuario where nome like '%" + textBoxPesquisa.Text + "%'";
                 }
-                
+
             }
             dtUsuario.DataSource = usController.obterDados(sql);
         }
@@ -51,5 +52,9 @@ namespace testando
             //dtUsuario.DataSource = usController.obterDados(sql);
         }
 
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            usController.gerarPDF(sql);
+        }
     }
 }

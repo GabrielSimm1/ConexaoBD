@@ -91,6 +91,8 @@ C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\K4os.Hash.xxHash.
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\Modelo.dll
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\MySql.Data.dll
+C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\PdfSharp.Charting.dll
+C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\PdfSharp.dll
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\System.Buffers.dll
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\System.Configuration.ConfigurationManager.dll
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\System.Diagnostics.DiagnosticSource.dll
@@ -109,6 +111,8 @@ C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\K4os.Compression.
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\K4os.Hash.xxHash.xml
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\MySql.Data.xml
+C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\PdfSharp.xml
+C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\PdfSharp.Charting.xml
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\System.Buffers.xml
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\System.IO.Pipelines.xml
@@ -116,6 +120,8 @@ C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\System.Memory.xml
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\bin\Debug\de\PdfSharp.Charting.resources.dll
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\obj\Debug\Controller.csproj.AssemblyReference.cache
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\obj\Debug\Controller.csproj.CoreCompileInputs.cache
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\obj\Debug\Controller.csproj.CopyComplete

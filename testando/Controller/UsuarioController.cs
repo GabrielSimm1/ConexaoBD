@@ -8,6 +8,10 @@ using Modelo;
 using System.Data;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
+using PdfSharp;//biblioteca geral
+using PdfSharp.Drawing;//para desenho
+using PdfSharp.Pdf;//conversao
+using System.Diagnostics;
 
 namespace Controller
 {
@@ -116,6 +120,53 @@ namespace Controller
             registro = Convert.ToInt32(command.ExecuteScalar());
 
             return registro;
+        }
+        public void gerarPDF(string sql)
+        {
+            UsuarioModelo us = new UsuarioModelo();
+            //chamo minha conexão MySql
+            MySqlConnection sqlcon= con.getConexao();
+            //preparo o comando sql
+            MySqlCommand command = new MySqlCommand(sql, sqlcon);
+            MySqlDataAdapter dados;// preparar os dados
+            DataSet ds = new DataSet();
+            try //teste de comandos
+            {
+                int i = 0; // resgistro
+                int ypoint = 0;//espaço do conteudo
+                sqlcon.Open();//abro a conexão
+                dados = new MySqlDataAdapter(command);// recuperando as informações
+                dados.Fill(ds);//carrego as informações geradas
+                PdfDocument pdf = new PdfDocument();//chamo a instancia do pdf
+                pdf.Info.Title = "Listar usuário";
+                PdfPage page = pdf.AddPage();//gera uma nova pagina
+                XGraphics grafic = XGraphics.FromPdfPage(page);
+                XFont font = new XFont("arial", 12, XFontStyle.Regular);//defino a fonte e o tamanho
+                ypoint = ypoint + 75;
+                grafic.DrawString(ds.Tables[0].Columns[0].ColumnName, font, XBrushes.Black, new XRect(20, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                grafic.DrawString(ds.Tables[0].Columns[1].ColumnName, font, XBrushes.Black, new XRect(120, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                grafic.DrawString(ds.Tables[0].Columns[3].ColumnName, font, XBrushes.Black, new XRect(220, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                ypoint = ypoint + 75; //gera uma nova posição
+                for(i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    //guarde no objeto nome o resultado da coluna
+                    us.id = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[0].ToString());
+                    us.nome = ds.Tables[0].Rows[i].ItemArray[1].ToString();
+                    us.id_perfil = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[3].ToString());
+                    grafic.DrawString(us.id.ToString(), font, XBrushes.Black, new XRect(20, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                    grafic.DrawString(us.nome, font, XBrushes.Black, new XRect(120, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                    grafic.DrawString(us.id_perfil.ToString(), font, XBrushes.Black, new XRect(220, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                    ypoint = ypoint + 30;
+                }//defino o nome do arquivo pdf
+                string pdffilename = "Listarusuario.pdf";
+                pdf.Save(pdffilename);//salvo o arquivo em pdf
+                Process.Start(pdffilename);// abro o arquivo salvo
+
+            }catch(Exception ex)
+            {
+                throw new ApplicationException(ex.ToString());
+            }
+
         }
     }
 }
