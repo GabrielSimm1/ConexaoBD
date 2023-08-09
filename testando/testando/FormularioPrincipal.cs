@@ -71,5 +71,12 @@ namespace testando
                 login.ShowDialog();
             }
         }
+
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormularioProduto produto = new FormularioProduto();
+            produto.MdiParent = this;
+            produto.Show();
+        }
     }
 }
