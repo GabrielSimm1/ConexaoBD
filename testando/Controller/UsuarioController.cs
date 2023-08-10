@@ -145,20 +145,20 @@ namespace Controller
                 ypoint = ypoint + 75;
                 grafic.DrawString(ds.Tables[0].Columns[0].ColumnName, font, XBrushes.Black, new XRect(20, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
                 grafic.DrawString(ds.Tables[0].Columns[1].ColumnName, font, XBrushes.Black, new XRect(120, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
-                grafic.DrawString(ds.Tables[0].Columns[2].ColumnName, font, XBrushes.Black, new XRect(220, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                grafic.DrawString(ds.Tables[0].Columns[3].ColumnName, font, XBrushes.Black, new XRect(220, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
                 ypoint = ypoint + 75; //gera uma nova posição
                 for(i = 0; i < ds.Tables[0].Rows.Count; i++)
                 {
                     //guarde no objeto nome o resultado da coluna
                     us.id = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[0].ToString());
-                    us.nome = ds.Tables[0].Rows[i].ItemArray[2].ToString();
+                    us.nome = ds.Tables[0].Rows[i].ItemArray[1].ToString();
                     us.id_perfil = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[3].ToString());
                     grafic.DrawString(us.id.ToString(), font, XBrushes.Black, new XRect(20, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
                     grafic.DrawString(us.nome, font, XBrushes.Black, new XRect(120, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
                     grafic.DrawString(us.id_perfil.ToString(), font, XBrushes.Black, new XRect(220, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
                     ypoint = ypoint + 30;
                 }//defino o nome do arquivo pdf
-                string pdffilename = "Listarusuario.pdf";
+                string pdffilename = "ListarUsuario.pdf";
                 pdf.Save(pdffilename);//salvo o arquivo em pdf
                 Process.Start(pdffilename);// abro o arquivo salvo
 

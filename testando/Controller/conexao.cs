@@ -27,7 +27,7 @@ namespace Controller
             MySqlConnection conexao = new MySqlConnection(StrCon);
             return conexao;
         }
-        public int cadastrar(string[] campos, string[] valores, string sql)
+        public int cadastrar(string[] campos, object[] valores, string sql)
         {
             int registro = 0;
             try

@@ -67,8 +67,9 @@ namespace testando
             var result = MessageBox.Show("Deseja sair do sistema?", "Sair do sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                
+                this.Hide();
                 login.ShowDialog();
+                this.Close();
             }
         }
 

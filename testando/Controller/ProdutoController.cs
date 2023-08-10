@@ -21,7 +21,7 @@ namespace Controller
                 sql = "insert into produto(descricao, preco, quantidade, perecivel, validade, foto)" +
                     "values(@nome, @preco, @qtde, @perecivel, @data, @foto)";
                 string[] campos = { "@nome", "@preco", "@qtde", "@perecivel", "@data", "@foto" };
-                string[] valores = { prod.descricao, prod.preco.ToString(), prod.quantidade.ToString(), prod.perecivel.ToString(), prod.validade.ToString(), prod.foto };
+                object[] valores = { prod.descricao, prod.preco, prod.quantidade, prod.perecivel, prod.validade, prod.foto };
                 if (com.cadastrar(campos, valores, sql) >= 1)
                 {
                     resultado = true;
