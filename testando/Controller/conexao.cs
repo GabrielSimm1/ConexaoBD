@@ -8,6 +8,7 @@ using MySql.Data.MySqlClient;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
 using System.Web;
+using System.Net.Http.Headers;
 
 namespace Controller
 {
@@ -48,6 +49,11 @@ namespace Controller
                 throw new Exception(ex.Message);
             }
             
+        }
+        public int atualizar(string[] campos, object[] valores, string sql)
+        {
+            int registro = 0;
+            return registro;
         }
     }
 }

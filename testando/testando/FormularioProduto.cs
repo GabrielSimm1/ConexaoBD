@@ -110,5 +110,18 @@ namespace testando
             char delete = (char)8;//codigo ascii para o backspace
             e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != delete && e.KeyChar != (char)44;
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            prodModelo.descricao = textBoxDescrição.Text;
+            prodModelo.preco = Convert.ToDecimal(textBoxPreco.Text);
+            prodModelo.quantidade = Convert.ToInt32(textBoxQuantidade.Text);
+            prodModelo.codigo = Convert.ToInt32(textBoxID);
+            if (checkBoxPerecivel.Checked)
+                prodModelo.perecivel = true;
+            else
+                prodModelo.perecivel = false;
+            prodModelo.validade = dataValidade.Value;
+        }
     }
 }
