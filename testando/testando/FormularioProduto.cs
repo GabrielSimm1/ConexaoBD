@@ -15,6 +15,7 @@ namespace testando
     public partial class FormularioProduto : Form
     {
         produtoModelo prodModelo = new produtoModelo();
+        ProdutoController prodController = new ProdutoController();
         public FormularioProduto()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace testando
         {
             try
             {
-                
+
                 //instancio o objeto produto
                 prodModelo.descricao = textBoxDescrição.Text;
                 prodModelo.quantidade = Convert.ToInt32(textBoxQuantidade.Text);
@@ -42,8 +43,8 @@ namespace testando
                     prodModelo.perecivel = false;
                 prodModelo.validade = dataValidade.Value;
                 prodModelo.foto = lblFoto.Text;
-                ProdutoController prodController = new ProdutoController();
-                if (prodController.cadastrarProduto(prodModelo) == true)
+
+                if (prodController.cadastrarProduto(prodModelo, 1) == true)
                 {
                     MessageBox.Show("Produto cadastrado com sucesso");
                 }
@@ -51,11 +52,12 @@ namespace testando
                 {
                     MessageBox.Show("Erro ao cadastrar produto");
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Preencha os campos");
             }
-            
+
 
         }
 
@@ -63,23 +65,24 @@ namespace testando
         {
             try
             {
-                
+
                 //chamo a caixa de dialgo pra foto
                 OpenFileDialog foto = new OpenFileDialog();
                 foto.Filter = "Image File(*.jpg;*.png)|*.jpg;*.png";
-                if(foto.ShowDialog() == DialogResult.OK)//verifica se apertou no OK no dialogo
+                if (foto.ShowDialog() == DialogResult.OK)//verifica se apertou no OK no dialogo
                 {
                     lblFoto.Visible = true;
                     lblFoto.Text = foto.FileName;//mostra o nome da foto
                     Image arquivo = Image.FromFile(foto.FileName);//caminho da imagem para ser exibida no form
                     BoxFoto.Image = arquivo;//carrego a foto no picture box
-                   
+
                 }
                 else
                 {
                     MessageBox.Show("Selecione um arquivo");
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Erro: ", ex.Message);
             }
@@ -116,12 +119,48 @@ namespace testando
             prodModelo.descricao = textBoxDescrição.Text;
             prodModelo.preco = Convert.ToDecimal(textBoxPreco.Text);
             prodModelo.quantidade = Convert.ToInt32(textBoxQuantidade.Text);
-            prodModelo.codigo = Convert.ToInt32(textBoxID);
+            prodModelo.codigo = Convert.ToInt32(textBoxID.Text);
             if (checkBoxPerecivel.Checked)
                 prodModelo.perecivel = true;
             else
                 prodModelo.perecivel = false;
             prodModelo.validade = dataValidade.Value;
+            prodModelo.foto = lblFoto.Text;
+            if (prodController.cadastrarProduto(prodModelo, 2) == true)
+            {
+                MessageBox.Show("Produto atualizado com sucesso");
+            }
+            else
+            {
+                MessageBox.Show("Erro ao atualizar produto");
+            }
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(prodModelo.codigo.ToString()))
+                {
+                    MessageBox.Show("Codigo está vazio");
+                    textBoxID.Focus();
+                }
+                prodModelo.codigo = Convert.ToInt32(textBoxID.Text);
+                if (prodModelo.codigo > 0)
+                {
+                    if (prodController.cadastrarProduto(prodModelo, 3) == true)
+                    {
+                        MessageBox.Show("Produto excluido com sucesso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Favor selecionar um ID existente");
+                    }
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Erro" + ex.Message);
+            }
+         }
     }
 }

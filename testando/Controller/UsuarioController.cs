@@ -24,14 +24,14 @@ namespace Controller
         {
             //declaro a variavel da resposta da minha query
             bool resultado = false;
-            string sql = "insert into usuario(nome, senha, id_perfil) values('" + usuario.nome + "','" + usuario.senha + "', "+usuario.id_perfil+")";
+            string sql = "insert into usuario(nome, senha, id_perfil) values('" + usuario.nome + "','" + usuario.senha + "', " + usuario.id_perfil + ")";
 
             //chamando minha conexão
             MySqlConnection sqlCon = con.getConexao();
             sqlCon.Open();//abrindo o banco
             MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
             if (cmd.ExecuteNonQuery() >= 1)//executar o seu sql
-            resultado = true;
+                resultado = true;
             sqlCon.Close();//fecho a conexao
 
             return resultado;//retorna o valor
@@ -59,7 +59,7 @@ namespace Controller
             MySqlCommand mySqlCommand = new MySqlCommand(sql, sqlcon);
             mySqlCommand.CommandType = System.Data.CommandType.Text;
             mySqlCommand.CommandText = sql;
-            if(mySqlCommand.ExecuteNonQuery() >= 1)
+            if (mySqlCommand.ExecuteNonQuery() >= 1)
             {
                 resultado = true;
             }
@@ -107,7 +107,7 @@ namespace Controller
         }
         public int Login(UsuarioModelo us)
         {
-           
+
             int registro;
             string sql = "SELECT id from usuario where nome=@usuario and senha=@senha";
             MySqlConnection sqlcon = con.getConexao();
@@ -125,7 +125,7 @@ namespace Controller
         {
             UsuarioModelo us = new UsuarioModelo();
             //chamo minha conexão MySql
-            MySqlConnection sqlcon= con.getConexao();
+            MySqlConnection sqlcon = con.getConexao();
             //preparo o comando sql
             MySqlCommand command = new MySqlCommand(sql, sqlcon);
             MySqlDataAdapter dados;// preparar os dados
@@ -147,7 +147,7 @@ namespace Controller
                 grafic.DrawString(ds.Tables[0].Columns[1].ColumnName, font, XBrushes.Black, new XRect(120, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
                 grafic.DrawString(ds.Tables[0].Columns[3].ColumnName, font, XBrushes.Black, new XRect(220, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
                 ypoint = ypoint + 75; //gera uma nova posição
-                for(i = 0; i < ds.Tables[0].Rows.Count; i++)
+                for (i = 0; i < ds.Tables[0].Rows.Count; i++)
                 {
                     //guarde no objeto nome o resultado da coluna
                     us.id = Convert.ToInt32(ds.Tables[0].Rows[i].ItemArray[0].ToString());
@@ -162,7 +162,8 @@ namespace Controller
                 pdf.Save(pdffilename);//salvo o arquivo em pdf
                 Process.Start(pdffilename);// abro o arquivo salvo
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new ApplicationException(ex.ToString());
             }

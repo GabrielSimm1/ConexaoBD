@@ -28,7 +28,7 @@ namespace Controller
             MySqlConnection conexao = new MySqlConnection(StrCon);
             return conexao;
         }
-        public int cadastrar(string[] campos, object[] valores, string sql)
+        public int cadastrar(string[] campos, object[] valores, string sql, int codigo)
         {
             int registro = 0;
             try
@@ -39,6 +39,10 @@ namespace Controller
                 for(int i =0; i < campos.Length; i++)
                 {
                     command.Parameters.AddWithValue(campos[i], valores[i]);
+                }
+                if (codigo > 0)
+                {
+                    command.Parameters.AddWithValue("id", codigo);
                 }
                 registro = command.ExecuteNonQuery();
                 conn.Close();

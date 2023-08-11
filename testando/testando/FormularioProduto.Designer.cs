@@ -124,12 +124,13 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(233, 310);
+            this.btnExcluir.Location = new System.Drawing.Point(234, 310);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
             this.btnExcluir.TabIndex = 7;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // textBoxPreco
             // 
@@ -202,6 +203,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnFoto);
             this.Controls.Add(this.checkBoxPerecivel);
             this.Controls.Add(this.BoxFoto);
@@ -210,7 +212,6 @@
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.textBoxDescrição);
             this.Controls.Add(this.textBoxPreco);
-            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.lblFoto);
