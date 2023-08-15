@@ -9,12 +9,12 @@ using System.Data;
 namespace testando
 
 {
-    public partial class Form1 : Form
+    public partial class FrmCadastrarUsuario : Form
     {
         int codigo;
         int id_perfil;
         
-        public Form1()
+        public FrmCadastrarUsuario()
         {
             InitializeComponent();
         }
@@ -133,5 +133,7 @@ namespace testando
             //variavel perfil convert para inteiro
             id_perfil = Convert.ToInt32(((DataRowView)cboPerfil.SelectedItem)["id_perfil"]);
         }
+
+      
     }
 }

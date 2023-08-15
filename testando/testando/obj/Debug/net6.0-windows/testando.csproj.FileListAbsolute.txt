@@ -113,7 +113,6 @@ C:\Users\aluno\Desktop\ConexaoBD\testando\testando\bin\Debug\net6.0-windows\Mode
 C:\Users\aluno\Desktop\ConexaoBD\testando\testando\bin\Debug\net6.0-windows\PdfSharp.xml
 C:\Users\aluno\Desktop\ConexaoBD\testando\testando\bin\Debug\net6.0-windows\de\PdfSharp.resources.dll
 C:\Users\aluno\Desktop\ConexaoBD\testando\testando\obj\Debug\net6.0-windows\testando.csproj.AssemblyReference.cache
-C:\Users\aluno\Desktop\ConexaoBD\testando\testando\obj\Debug\net6.0-windows\testando.Form1.resources
 C:\Users\aluno\Desktop\ConexaoBD\testando\testando\obj\Debug\net6.0-windows\testando.FormularioPrincipal.resources
 C:\Users\aluno\Desktop\ConexaoBD\testando\testando\obj\Debug\net6.0-windows\testando.FrmListarUsuario.resources
 C:\Users\aluno\Desktop\ConexaoBD\testando\testando\obj\Debug\net6.0-windows\testando.FrmLogin.resources
@@ -130,3 +129,5 @@ C:\Users\aluno\Desktop\ConexaoBD\testando\testando\obj\Debug\net6.0-windows\test
 C:\Users\aluno\Desktop\ConexaoBD\testando\testando\obj\Debug\net6.0-windows\testando.genruntimeconfig.cache
 C:\Users\aluno\Desktop\ConexaoBD\testando\testando\obj\Debug\net6.0-windows\ref\testando.dll
 C:\Users\aluno\Desktop\ConexaoBD\testando\testando\obj\Debug\net6.0-windows\testando.FormularioProduto.resources
+C:\Users\aluno\Desktop\ConexaoBD\testando\testando\obj\Debug\net6.0-windows\testando.FormularioListarProduto.resources
+C:\Users\aluno\Desktop\ConexaoBD\testando\testando\obj\Debug\net6.0-windows\testando.FrmCadastrarUsuario.resources

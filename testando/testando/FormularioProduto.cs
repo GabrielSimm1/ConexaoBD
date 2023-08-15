@@ -14,6 +14,7 @@ namespace testando
 {
     public partial class FormularioProduto : Form
     {
+        Conexao con = new Conexao();
         produtoModelo prodModelo = new produtoModelo();
         ProdutoController prodController = new ProdutoController();
         public FormularioProduto()
@@ -26,6 +27,7 @@ namespace testando
             dataValidade.Visible = false;
             label5.Visible = false;
             lblFoto.Visible = false;
+            dtProduto.DataSource = con.obterDados("SELECT * from produto");
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
@@ -145,7 +147,7 @@ namespace testando
                     MessageBox.Show("Codigo está vazio");
                     textBoxID.Focus();
                 }
-                prodModelo.codigo = Convert.ToInt32(textBoxID.Text);
+                //prodModelo.codigo = Convert.ToInt32(textBoxID.Text);
                 if (prodModelo.codigo > 0)
                 {
                     if (prodController.cadastrarProduto(prodModelo, 3) == true)
@@ -162,5 +164,32 @@ namespace testando
                 MessageBox.Show("Erro" + ex.Message);
             }
          }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtProduto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            prodModelo.codigo = Convert.ToInt32(dtProduto.Rows[e.RowIndex].Cells[0].Value);
+            textBoxID.Text = prodModelo.codigo.ToString();
+            textBoxDescrição.Text = dtProduto.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBoxPreco.Text = dtProduto.Rows[e.RowIndex].Cells[2].Value.ToString();
+            textBoxQuantidade.Text = dtProduto.Rows[e.RowIndex].Cells[3].Value.ToString();
+            if (Convert.ToInt32(dtProduto.Rows[e.RowIndex].Cells[4].Value) == 1)
+            {
+                checkBoxPerecivel.Checked = true;
+            }
+            else
+            {
+                checkBoxPerecivel.Checked = false;
+            }
+            dataValidade.Value = Convert.ToDateTime(dtProduto.Rows[e.RowIndex].Cells[5].Value);
+            BoxFoto.Image = Image.FromFile(dtProduto.Rows[e.RowIndex].Cells[6].Value.ToString());
+
+            
+            
+        }
     }
 }

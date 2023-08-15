@@ -43,7 +43,7 @@ namespace testando
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 usuario = new Form1();
+            FrmCadastrarUsuario usuario = new FrmCadastrarUsuario();
             usuario.MdiParent = this;
             usuario.Show();
         }
@@ -78,6 +78,13 @@ namespace testando
             FormularioProduto produto = new FormularioProduto();
             produto.MdiParent = this;
             produto.Show();
+        }
+
+        private void produtoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormularioListarProduto listarProduto = new FormularioListarProduto();
+            listarProduto.MdiParent = this;
+            listarProduto.Show();
         }
     }
 }

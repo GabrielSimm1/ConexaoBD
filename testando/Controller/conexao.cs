@@ -9,6 +9,8 @@ using System.Runtime.InteropServices;
 using Microsoft.Win32;
 using System.Web;
 using System.Net.Http.Headers;
+using System.Data;
+using System.Drawing;
 
 namespace Controller
 {
@@ -53,6 +55,20 @@ namespace Controller
                 throw new Exception(ex.Message);
             }
             
+        }
+        public DataTable obterDados(string sql)
+        {
+            //crio uma tabela de dados
+            DataTable dt = new DataTable();
+            MySqlConnection conn = getConexao();
+            conn.Open();//abre o banco de dados
+            MySqlCommand sqlCon = new MySqlCommand(sql, conn);
+            sqlCon.CommandType = System.Data.CommandType.Text;
+            sqlCon.CommandText = sql;
+            MySqlDataAdapter dados = new MySqlDataAdapter(sql, conn);
+            dados.Fill(dt);// montar a tabela dados
+            conn.Close();
+            return dt;
         }
         public int atualizar(string[] campos, object[] valores, string sql)
         {

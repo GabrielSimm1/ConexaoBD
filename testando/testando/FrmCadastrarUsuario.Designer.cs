@@ -1,6 +1,6 @@
 ﻿namespace testando
 {
-    partial class Form1
+    partial class FrmCadastrarUsuario
     {
         /// <summary>
         ///  Required designer variable.
@@ -95,6 +95,7 @@
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(121, 23);
             this.textBoxID.TabIndex = 5;
+            
             // 
             // label2
             // 

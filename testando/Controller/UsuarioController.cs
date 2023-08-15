@@ -36,20 +36,7 @@ namespace Controller
 
             return resultado;//retorna o valor
         }
-        public DataTable obterDados(string sql)
-        {
-            //crio uma tabela de dados
-            DataTable dt = new DataTable();
-            MySqlConnection conn = con.getConexao();
-            conn.Open();//abre o banco de dados
-            MySqlCommand sqlCon = new MySqlCommand(sql, conn);
-            sqlCon.CommandType = System.Data.CommandType.Text;
-            sqlCon.CommandText = sql;
-            MySqlDataAdapter dados = new MySqlDataAdapter(sql, conn);
-            dados.Fill(dt);// montar a tabela dados
-            conn.Close();
-            return dt;
-        }
+        
         public bool Excluir(int codigo)
         {
             bool resultado = false;
@@ -120,6 +107,20 @@ namespace Controller
             registro = Convert.ToInt32(command.ExecuteScalar());
 
             return registro;
+        }
+        public DataTable obterDados(string sql)
+        {
+            //crio uma tabela de dados
+            DataTable dt = new DataTable();
+            MySqlConnection conn = con.getConexao();
+            conn.Open();//abre o banco de dados
+            MySqlCommand sqlCon = new MySqlCommand(sql, conn);
+            sqlCon.CommandType = System.Data.CommandType.Text;
+            sqlCon.CommandText = sql;
+            MySqlDataAdapter dados = new MySqlDataAdapter(sql, conn);
+            dados.Fill(dt);// montar a tabela dados
+            conn.Close();
+            return dt;
         }
         public void gerarPDF(string sql)
         {
