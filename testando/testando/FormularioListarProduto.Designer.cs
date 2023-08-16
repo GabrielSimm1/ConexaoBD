@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // panel1
+            // flowLayoutPanel1
             // 
-            this.panel1.Location = new System.Drawing.Point(34, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(905, 622);
-            this.panel1.TabIndex = 0;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(22, 24);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(928, 440);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // FormularioListarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 646);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "FormularioListarProduto";
             this.Text = "FormularioListarProduto";
             this.Load += new System.EventHandler(this.FormularioListarProduto_Load);
@@ -53,6 +53,6 @@
 
         #endregion
 
-        private Panel panel1;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+
 namespace testando
 {
     public partial class FrmListarUsuario : Form
@@ -18,14 +19,21 @@ namespace testando
         string sql=" ";
         int valor;
         UsuarioController usController = new UsuarioController();
+        Conexao con = new Conexao();  
         public FrmListarUsuario()
         {
             InitializeComponent();
         }
 
-        private void btnPesquisar_Click(object sender, EventArgs e)
+ 
+        private void FrmListarUsuario_Load_1(object sender, EventArgs e)
         {
+            //sql = "SELECT * from usuario";
+            //dtUsuario.DataSource = con.obterDados(sql);
+        }
 
+        private void btnPesquisar_Click_1(object sender, EventArgs e)
+        {
             if (string.IsNullOrEmpty(textBoxPesquisa.Text))
             {
                 sql = "SELECT * from usuario";
@@ -43,13 +51,7 @@ namespace testando
                 }
 
             }
-            dtUsuario.DataSource = usController.obterDados(sql);
-        }
-
-        private void FrmListarUsuario_Load(object sender, EventArgs e)
-        {
-            //sql = "SELECT * from usuario";
-            //dtUsuario.DataSource = usController.obterDados(sql);
+            dtUsuario.DataSource = con.obterDados(sql);
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)

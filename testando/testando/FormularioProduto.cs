@@ -22,7 +22,7 @@ namespace testando
             InitializeComponent();
         }
 
-        private void FormularioProduto_Load(object sender, EventArgs e)
+        private void FormularioProduto_Load(object? sender, EventArgs e)
         {
             dataValidade.Visible = false;
             label5.Visible = false;
@@ -30,7 +30,7 @@ namespace testando
             dtProduto.DataSource = con.obterDados("SELECT * from produto");
         }
 
-        private void btnInserir_Click(object sender, EventArgs e)
+        private void btnInserir_Click(object? sender, EventArgs e)
         {
             try
             {
@@ -55,15 +55,15 @@ namespace testando
                     MessageBox.Show("Erro ao cadastrar produto");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Preencha os campos");
+                MessageBox.Show("Preencha todos os campos.");
             }
 
 
         }
 
-        private void btnFoto_Click(object sender, EventArgs e)
+        private void btnFoto_Click(object? sender, EventArgs e)
         {
             try
             {
@@ -90,7 +90,7 @@ namespace testando
             }
         }
 
-        private void checkBoxPerecivel_Click(object sender, EventArgs e)
+        private void checkBoxPerecivel_Click(object? sender, EventArgs e)
         {
             if (checkBoxPerecivel.Checked)
             {
@@ -104,7 +104,7 @@ namespace testando
             }
         }
 
-        private void textBoxQuantidade_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBoxQuantidade_KeyPress(object? sender, KeyPressEventArgs e)
         {
             char delete = (char)8;//codigo ascii para o backspace
             e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != delete;
@@ -116,7 +116,7 @@ namespace testando
             e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != delete && e.KeyChar != (char)44;
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object? sender, EventArgs e)
         {
             prodModelo.descricao = textBoxDescrição.Text;
             prodModelo.preco = Convert.ToDecimal(textBoxPreco.Text);
@@ -138,7 +138,7 @@ namespace testando
             }
         }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
+        private void btnExcluir_Click(object? sender, EventArgs e)
         {
             try
             {
@@ -165,12 +165,12 @@ namespace testando
             }
          }
 
-        private void btnPesquisar_Click(object sender, EventArgs e)
+        private void btnPesquisar_Click(object? sender, EventArgs e)
         {
 
         }
 
-        private void dtProduto_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dtProduto_CellClick(object? sender, DataGridViewCellEventArgs e)
         {
             prodModelo.codigo = Convert.ToInt32(dtProduto.Rows[e.RowIndex].Cells[0].Value);
             textBoxID.Text = prodModelo.codigo.ToString();

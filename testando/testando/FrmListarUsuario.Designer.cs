@@ -44,6 +44,7 @@
             this.btnPesquisar.TabIndex = 0;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click_1);
             // 
             // dtUsuario
             // 
@@ -69,6 +70,7 @@
             this.btnImprimir.TabIndex = 3;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // label1
             // 
@@ -91,6 +93,7 @@
             this.Controls.Add(this.btnPesquisar);
             this.Name = "FrmListarUsuario";
             this.Text = "FrmListarUsuario";
+            this.Load += new System.EventHandler(this.FrmListarUsuario_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dtUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

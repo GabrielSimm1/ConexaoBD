@@ -13,6 +13,7 @@ namespace testando
     {
         int codigo;
         int id_perfil;
+        Conexao con = new Conexao();
         
         public FrmCadastrarUsuario()
         {
@@ -28,8 +29,8 @@ namespace testando
         {
             //instanciar o meu controleusuario
             UsuarioController usControle = new UsuarioController();
-            dtUsuario.DataSource = usControle.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
-            cboPerfil.DataSource = usControle.obterDados("select *from perfil");
+            dtUsuario.DataSource = con.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
+            cboPerfil.DataSource = con.obterDados("select *from perfil");
             cboPerfil.DisplayMember = "perfil";
             cboPerfil.ValueMember = "id_perfil";
         }
@@ -46,7 +47,7 @@ namespace testando
                 if (usControle.cadastrar(usModelo) == true)
                 {
                     MessageBox.Show("Usuário cadastrado com sucesso!");
-                    dtUsuario.DataSource = usControle.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
+                    dtUsuario.DataSource = con.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
                 }
                 else
                 {
@@ -62,8 +63,8 @@ namespace testando
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Conexao conexao = new Conexao();
-            if (conexao.getConexao() == null)
+            Conexao con = new Conexao();
+            if (con.getConexao() == null)
             {
                 MessageBox.Show("Erro na conexao");
             }
@@ -95,7 +96,7 @@ namespace testando
             if(usController.Excluir(codigo) == true)
             {
                 MessageBox.Show("Usuário " + codigo + " excluido com sucesso!");
-                dtUsuario.DataSource = usController.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
+                dtUsuario.DataSource = con.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
             }
             else
             {
@@ -114,7 +115,7 @@ namespace testando
             if(usController.Editar(usModelo) == true)
             {
                 MessageBox.Show("Usuário atualizado com sucesso!!");
-                dtUsuario.DataSource = usController.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
+                dtUsuario.DataSource = con.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
             }
             else
             {
