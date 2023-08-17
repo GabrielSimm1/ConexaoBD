@@ -1824,11 +1824,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\testando\\testando.csproj",
+      "projectUniqueName": "C:\\Users\\aluno\\Source\\Repos\\ConexaoBD\\testando\\testando\\testando.csproj",
       "projectName": "testando",
-      "projectPath": "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\testando\\testando.csproj",
+      "projectPath": "C:\\Users\\aluno\\Source\\Repos\\ConexaoBD\\testando\\testando\\testando.csproj",
       "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\testando\\obj\\",
+      "outputPath": "C:\\Users\\aluno\\Source\\Repos\\ConexaoBD\\testando\\testando\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1849,11 +1849,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\Controller\\Controller.csproj": {
-              "projectPath": "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\Controller\\Controller.csproj"
+            "C:\\Users\\aluno\\Source\\Repos\\ConexaoBD\\testando\\Controller\\Controller.csproj": {
+              "projectPath": "C:\\Users\\aluno\\Source\\Repos\\ConexaoBD\\testando\\Controller\\Controller.csproj"
             },
-            "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\Modelo\\Modelo.csproj": {
-              "projectPath": "C:\\Users\\aluno\\Desktop\\ConexaoBD\\testando\\Modelo\\Modelo.csproj"
+            "C:\\Users\\aluno\\Source\\Repos\\ConexaoBD\\testando\\Modelo\\Modelo.csproj": {
+              "projectPath": "C:\\Users\\aluno\\Source\\Repos\\ConexaoBD\\testando\\Modelo\\Modelo.csproj"
             }
           }
         }

@@ -127,3 +127,9 @@ C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\obj\Debug\Controller.csproj
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\obj\Debug\Controller.csproj.CopyComplete
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\obj\Debug\Controller.dll
 C:\Users\aluno\Desktop\ConexaoBD\testando\Controller\obj\Debug\Controller.pdb
+C:\Users\aluno\Source\Repos\ConexaoBD\testando\Controller\bin\Debug\PdfSharp.Charting.dll
+C:\Users\aluno\Source\Repos\ConexaoBD\testando\Controller\bin\Debug\PdfSharp.dll
+C:\Users\aluno\Source\Repos\ConexaoBD\testando\Controller\bin\Debug\PdfSharp.xml
+C:\Users\aluno\Source\Repos\ConexaoBD\testando\Controller\bin\Debug\PdfSharp.Charting.xml
+C:\Users\aluno\Source\Repos\ConexaoBD\testando\Controller\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\aluno\Source\Repos\ConexaoBD\testando\Controller\bin\Debug\de\PdfSharp.Charting.resources.dll
