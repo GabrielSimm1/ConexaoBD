@@ -76,6 +76,7 @@
             // 
             this.textBoxSenha.Location = new System.Drawing.Point(115, 191);
             this.textBoxSenha.Name = "textBoxSenha";
+            this.textBoxSenha.PasswordChar = '*';
             this.textBoxSenha.Size = new System.Drawing.Size(121, 23);
             this.textBoxSenha.TabIndex = 3;
             this.textBoxSenha.TextChanged += new System.EventHandler(this.textBoxSenha_TextChanged);
@@ -95,7 +96,6 @@
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(121, 23);
             this.textBoxID.TabIndex = 5;
-            
             // 
             // label2
             // 
@@ -174,7 +174,7 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Perfil:";
             // 
-            // Form1
+            // FrmCadastrarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -194,7 +194,7 @@
             this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "FrmCadastrarUsuario";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtUsuario)).EndInit();

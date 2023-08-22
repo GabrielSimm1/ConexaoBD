@@ -24,7 +24,7 @@ namespace Controller
         {
             //declaro a variavel da resposta da minha query
             bool resultado = false;
-            string sql = "insert into usuario(nome, senha, id_perfil) values('" + usuario.nome + "','" + usuario.senha + "', " + usuario.id_perfil + ")";
+            string sql = "insert into usuario(nome, senha, id_perfil) values('" + usuario.nome + "','" + con.getMD5Hash(usuario.senha) + "', " + usuario.id_perfil + ")";
 
             //chamando minha conexão
             MySqlConnection sqlCon = con.getConexao();
@@ -62,7 +62,7 @@ namespace Controller
             command.CommandType = System.Data.CommandType.Text;
             command.CommandText = sql;
             command.Parameters.AddWithValue("@nome", us.nome);
-            command.Parameters.AddWithValue("@senha", us.senha);
+            command.Parameters.AddWithValue("@senha",con.getMD5Hash(us.senha));
             command.Parameters.AddWithValue("@id", us.id);
             command.Parameters.AddWithValue("@perfil", us.id_perfil);
             if (command.ExecuteNonQuery() >= 1)
@@ -103,7 +103,7 @@ namespace Controller
             command.CommandType = CommandType.Text;
             command.CommandText = sql;
             command.Parameters.AddWithValue("@usuario", us.nome);
-            command.Parameters.AddWithValue("@senha", us.senha);
+            command.Parameters.AddWithValue("@senha", con.getMD5Hash(us.senha));
             registro = Convert.ToInt32(command.ExecuteScalar());
 
             return registro;
