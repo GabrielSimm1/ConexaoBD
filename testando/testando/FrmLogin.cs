@@ -73,5 +73,12 @@ namespace testando
             this.Visible = true;
             this.Dispose();
         }
+
+        private void btnRecuperarSenha_Click(object sender, EventArgs e)
+        {
+            Conexao con = new Conexao();
+            con.recuperaEmail(textBoxLogin.Text);
+            lblMessage.Text = con.recuperaEmail(textBoxLogin.Text);
+        }
     }
 }

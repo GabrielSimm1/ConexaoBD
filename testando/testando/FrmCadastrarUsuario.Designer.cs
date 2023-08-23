@@ -42,6 +42,8 @@
             this.btnListar = new System.Windows.Forms.Button();
             this.cboPerfil = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +59,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(66, 262);
+            this.button1.Location = new System.Drawing.Point(66, 290);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 1;
@@ -148,7 +150,7 @@
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(192, 262);
+            this.btnListar.Location = new System.Drawing.Point(192, 290);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(100, 23);
             this.btnListar.TabIndex = 11;
@@ -174,12 +176,30 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Perfil:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(66, 251);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 15);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Email:";
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Location = new System.Drawing.Point(115, 248);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(121, 23);
+            this.textBoxEmail.TabIndex = 15;
+            // 
             // FrmCadastrarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(966, 484);
+            this.Controls.Add(this.textBoxEmail);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cboPerfil);
             this.Controls.Add(this.btnListar);
@@ -219,5 +239,7 @@
         private Button btnListar;
         private ComboBox cboPerfil;
         private Label label4;
+        private Label label5;
+        private TextBox textBoxEmail;
     }
 }

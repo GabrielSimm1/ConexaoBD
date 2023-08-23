@@ -24,7 +24,7 @@ namespace Controller
         {
             //declaro a variavel da resposta da minha query
             bool resultado = false;
-            string sql = "insert into usuario(nome, senha, id_perfil) values('" + usuario.nome + "','" + con.getMD5Hash(usuario.senha) + "', " + usuario.id_perfil + ")";
+            string sql = "insert into usuario(nome, senha, id_perfil, email) values('" + usuario.nome + "','" + con.getMD5Hash(usuario.senha) + "', " + usuario.id_perfil + ", '" + usuario.email + "')";
 
             //chamando minha conexão
             MySqlConnection sqlCon = con.getConexao();
@@ -55,7 +55,7 @@ namespace Controller
         public bool Editar(UsuarioModelo us)
         {
             bool resultado = false;
-            string sql = "update usuario set nome=@nome, senha=@senha, id_perfil=@perfil where id=@id";
+            string sql = "update usuario set nome=@nome, senha=@senha, id_perfil=@perfil,email=@email where id=@id";
             MySqlConnection sqlcon = con.getConexao();
             sqlcon.Open();
             MySqlCommand command = new MySqlCommand(sql, sqlcon);
@@ -65,6 +65,7 @@ namespace Controller
             command.Parameters.AddWithValue("@senha",con.getMD5Hash(us.senha));
             command.Parameters.AddWithValue("@id", us.id);
             command.Parameters.AddWithValue("@perfil", us.id_perfil);
+            command.Parameters.AddWithValue("email", us.email);
             if (command.ExecuteNonQuery() >= 1)
                 resultado = true;
             sqlcon.Close();
@@ -87,6 +88,7 @@ namespace Controller
                 us.senha = registro["senha"].ToString();
                 us.id = Convert.ToInt32(registro["id"]);
                 us.id_perfil = Convert.ToInt32(registro["id_perfil"]);
+                us.email = registro["email"].ToString();    
             }
             sqlcon.Close();
             return us;

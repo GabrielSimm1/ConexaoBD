@@ -34,15 +34,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.textBoxSenha = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnRecuperarSenha = new System.Windows.Forms.Button();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnLogin
             // 
-            this.BtnLogin.Location = new System.Drawing.Point(35, 113);
+            this.BtnLogin.Location = new System.Drawing.Point(83, 118);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(75, 23);
+            this.BtnLogin.Size = new System.Drawing.Size(104, 23);
             this.BtnLogin.TabIndex = 2;
             this.BtnLogin.Text = "Acessar";
             this.BtnLogin.UseVisualStyleBackColor = true;
@@ -70,7 +71,7 @@
             // 
             this.textBoxLogin.Location = new System.Drawing.Point(83, 38);
             this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(100, 23);
+            this.textBoxLogin.Size = new System.Drawing.Size(138, 23);
             this.textBoxLogin.TabIndex = 0;
             // 
             // textBoxSenha
@@ -78,26 +79,36 @@
             this.textBoxSenha.Location = new System.Drawing.Point(83, 67);
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.PasswordChar = '*';
-            this.textBoxSenha.Size = new System.Drawing.Size(100, 23);
+            this.textBoxSenha.Size = new System.Drawing.Size(138, 23);
             this.textBoxSenha.TabIndex = 1;
             this.textBoxSenha.TextChanged += new System.EventHandler(this.textBoxSenha_TextChanged);
             this.textBoxSenha.MouseHover += new System.EventHandler(this.textBoxSenha_MouseHover);
             // 
-            // btnCancelar
+            // btnRecuperarSenha
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(140, 113);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 3;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnRecuperarSenha.Location = new System.Drawing.Point(83, 147);
+            this.btnRecuperarSenha.Name = "btnRecuperarSenha";
+            this.btnRecuperarSenha.Size = new System.Drawing.Size(104, 23);
+            this.btnRecuperarSenha.TabIndex = 6;
+            this.btnRecuperarSenha.Text = "Recuperar senha";
+            this.btnRecuperarSenha.UseVisualStyleBackColor = true;
+            this.btnRecuperarSenha.Click += new System.EventHandler(this.btnRecuperarSenha_Click);
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Location = new System.Drawing.Point(35, 98);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(0, 15);
+            this.lblMessage.TabIndex = 7;
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(274, 182);
-            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.btnRecuperarSenha);
             this.Controls.Add(this.textBoxSenha);
             this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.label2);
@@ -119,7 +130,8 @@
         private Label label2;
         private TextBox textBoxLogin;
         private TextBox textBoxSenha;
-        private Button btnCancelar;
         private ToolTip toolTip1;
+        private Button btnRecuperarSenha;
+        private Label lblMessage;
     }
 }

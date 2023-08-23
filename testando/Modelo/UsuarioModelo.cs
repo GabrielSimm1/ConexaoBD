@@ -13,6 +13,7 @@ namespace Modelo
          public string nome;
          public string senha;
          public int id_perfil;
+         public string email;    
         //constructor da classe modelo
         public UsuarioModelo()
         {

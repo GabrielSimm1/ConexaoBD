@@ -29,7 +29,7 @@ namespace testando
         {
             //instanciar o meu controleusuario
             UsuarioController usControle = new UsuarioController();
-            dtUsuario.DataSource = con.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
+            dtUsuario.DataSource = con.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil, usuario.email from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
             cboPerfil.DataSource = con.obterDados("select *from perfil");
             cboPerfil.DisplayMember = "perfil";
             cboPerfil.ValueMember = "id_perfil";
@@ -41,13 +41,14 @@ namespace testando
             usModelo.nome= textBoxNome.Text;
             usModelo.senha= textBoxSenha.Text;
             usModelo.id_perfil = id_perfil;
+            usModelo.email = textBoxEmail.Text;
             UsuarioController usControle = new UsuarioController();
             if (usModelo.nome != "" && usModelo.senha != "")
             {
                 if (usControle.cadastrar(usModelo) == true)
                 {
                     MessageBox.Show("Usuário cadastrado com sucesso!");
-                    dtUsuario.DataSource = con.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
+                    dtUsuario.DataSource = con.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil, usuario.email from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
                 }
                 else
                 {
@@ -88,6 +89,7 @@ namespace testando
             textBoxNome.Text = dtUsuario.Rows[e.RowIndex].Cells["nome"].Value.ToString();
             textBoxSenha.Text = dtUsuario.Rows[e.RowIndex].Cells["senha"].Value.ToString();
             cboPerfil.Text = dtUsuario.Rows[e.RowIndex].Cells["perfil"].Value.ToString();
+            textBoxEmail.Text = dtUsuario.Rows[e.RowIndex].Cells["email"].Value.ToString();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -112,10 +114,11 @@ namespace testando
             usModelo.senha = textBoxSenha.Text;
             usModelo.id = codigo;
             usModelo.id_perfil = id_perfil;
+            usModelo.email = textBoxEmail.Text;
             if(usController.Editar(usModelo) == true)
             {
                 MessageBox.Show("Usuário atualizado com sucesso!!");
-                dtUsuario.DataSource = con.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
+                dtUsuario.DataSource = con.obterDados("select usuario.id, usuario.nome,usuario.senha, perfil.perfil, usuario.email from usuario inner join perfil on usuario.id_perfil=perfil.id_perfil;");
             }
             else
             {
