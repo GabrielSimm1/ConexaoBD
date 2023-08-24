@@ -109,33 +109,45 @@ namespace Controller
                     conn = getConexao();//abro a conexão
                     conn.Open();//abro o BD
                     //chamo a função obter dados passando o SQL com o login
-                    dt = obterDados("select * from usuario where nome=" + login);
+                    dt = obterDados("select * from usuario where nome='" + login + "'");
                     //verifico se achou algum registro
                     if (dt.Rows.Count > 0)
                     {
-                        string email = "gabriel.simm3@gmail.com";
-                        String senha = "senha";
+                        string email = "gabriel.simm@outlook.com";
+                        String senha = "Boleirosou97";
                         SmtpClient cliente = new SmtpClient();
                         cliente.Host = "smtp.office365.com";
                         cliente.Port = 587;
                         cliente.EnableSsl = true;
+                        cliente.UseDefaultCredentials = false;
                         cliente.Credentials = new System.Net.NetworkCredential(email, senha);
+                        cliente.DeliveryMethod = SmtpDeliveryMethod.Network;
                         MailMessage mail = new MailMessage();//criar mensagem
                         mail.Sender = new MailAddress(email, "Sistema TDS");//configura o email de envio
                         mail.From = new MailAddress(email, "Recuperar senha");
-                        mail.To.Add(new MailAddress(dt.Rows[0][4].ToString(), dt.Rows[0][1].ToString()));
+                        string emailUsuario = dt.Rows[0][4].ToString();
+                        mail.To.Add(new MailAddress(emailUsuario, dt.Rows[0][1].ToString()));
                         mail.Subject = "Lembrar senha";
-                        mail.Body = "Ola" + dt.Rows[0][1].ToString() + "sua senha é: " + aleatorio.Next(20);
+                        int novaSenha = aleatorio.Next(2000);
+                        mail.Body = "Ola " + dt.Rows[0][1].ToString() + " sua senha é: " + novaSenha;
                         mail.IsBodyHtml = true; // cria um arquivo local
                         mail.Priority = MailPriority.High;//prioridade de envio
+                        
                         try
                         {
-                            cliente.Send(mail);
+                            cliente.SendAsync(email, emailUsuario, mail.Subject, mail.Body, 1);
                             msg = "E-mail enviado com sucesso!";
+                            
+                          
                         }catch(Exception ex)
                         {
                             throw new Exception ("Erro ao enviar e-mail: " + ex.Message);
                         }
+                        
+                    }
+                    else
+                    {
+                        msg = "Usuário não encontrado";
                     }
                 }
                 return msg;
