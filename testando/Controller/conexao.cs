@@ -25,7 +25,7 @@ namespace Controller
         static private string usuario = "root";
         static private string senha = "";
         Random aleatorio = new Random();
-        UsuarioModelo usarioModelo = new UsuarioModelo();//chamo o modelo usuario
+      
         public MySqlConnection conn = null;//minha conexão
         //StrCon caminho de conexão
         static private string StrCon = "server=" + servidor + ";database=" + db + ";user id=" + usuario + ";pasword=" + senha;
@@ -99,6 +99,8 @@ namespace Controller
                 //criar a tabela de dados
                 DataTable dt = new DataTable();
                 string msg = null;//validação de informação
+                string novaSenha;
+                bool confirmaAtt; //guarda o resultado
                 if (login == null)//valido o preenchimento
                 {
                     msg = "Login está vazio";
@@ -128,15 +130,30 @@ namespace Controller
                         string emailUsuario = dt.Rows[0][4].ToString();
                         mail.To.Add(new MailAddress(emailUsuario, dt.Rows[0][1].ToString()));
                         mail.Subject = "Lembrar senha";
-                        int novaSenha = aleatorio.Next(2000);
+                        novaSenha = aleatorio.Next(2000).ToString();
+                        UsuarioModelo usuarioModelo = new UsuarioModelo();//chamo o modelo usuario
+                        UsuarioController usController = new UsuarioController();
+                        usuarioModelo.senha = novaSenha;
+                        usuarioModelo.nome = dt.Rows[0][1].ToString();
+                        usuarioModelo.email = dt.Rows[0][4].ToString();
+                        usuarioModelo.id_perfil = Convert.ToInt32(dt.Rows[0][3].ToString());
+                        usuarioModelo.id = Convert.ToInt32(dt.Rows[0][0].ToString());
+                        confirmaAtt = usController.Editar(usuarioModelo);
                         mail.Body = "Ola " + dt.Rows[0][1].ToString() + " sua senha é: " + novaSenha;
                         mail.IsBodyHtml = true; // cria um arquivo local
                         mail.Priority = MailPriority.High;//prioridade de envio
                         
                         try
                         {
-                            cliente.SendAsync(email, emailUsuario, mail.Subject, mail.Body, 1);
-                            msg = "E-mail enviado com sucesso!";
+                            if (confirmaAtt)
+                            {
+                                cliente.SendAsync(email, emailUsuario, mail.Subject, mail.Body, 1);
+                                msg = "E-mail enviado com sucesso!" + novaSenha;
+                            }
+                            else
+                            {
+                                msg = "Não foi possível atualizar senha";
+                            }
                             
                           
                         }catch(Exception ex)

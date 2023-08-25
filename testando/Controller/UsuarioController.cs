@@ -113,10 +113,6 @@ namespace Controller
         //public DataTable obterDados(string sql)
         //{
         //    //crio uma tabela de dados
-        //    DataTable dt = new DataTable();
-        //    MySqlConnection conn = con.getConexao();
-        //    conn.Open();//abre o banco de dados
-        //    MySqlCommand sqlCon = new MySqlCommand(sql, conn);
         //    sqlCon.CommandType = System.Data.CommandType.Text;
         //    sqlCon.CommandText = sql;
         //    MySqlDataAdapter dados = new MySqlDataAdapter(sql, conn);
@@ -150,6 +146,7 @@ namespace Controller
                 grafic.DrawString(ds.Tables[0].Columns[1].ColumnName, font, XBrushes.Black, new XRect(120, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
                 grafic.DrawString(ds.Tables[0].Columns[3].ColumnName, font, XBrushes.Black, new XRect(220, ypoint, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
                 ypoint = ypoint + 75; //gera uma nova posição
+
                 for (i = 0; i < ds.Tables[0].Rows.Count; i++)
                 {
                     //guarde no objeto nome o resultado da coluna
